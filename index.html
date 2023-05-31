@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url(https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css);
+
+        @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+        body {
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+            font-family: "Lato", sans-serif;
+            color: #333;
+        }
+
+        .card {
+            position: relative;
+            width: 370px;
+            height: auto;
+            box-shadow: 0 0 100px rgba(0, 0, 0, .3);
+        }
+
+        .card-header {
+            position: relative;
+            height: 300px;
+            background-size: cover;
+            background-position: top;
+        }
+
+        .card-header:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /*   background: linear-gradient(to top, rgb(5,85,134), rgba(181,181,181, 0.1)); */
+        }
+
+        .card-header-bar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            clip: rect(0, 0, 0, 0);
+            border: none;
+            overflow: hidden;
+        }
+
+        svg .polygon {
+            fill: #fff;
+        }
+
+        .card-header-slanted-edge {
+            position: absolute;
+            bottom: -3px;
+            z-index: 1;
+            width: 100%;
+            right: 0;
+            left: 0;
+        }
+
+        .btn-follow:after {
+            content: '';
+            position: absolute;
+            background: url(https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/add.svg) no-repeat;
+            width: 17px;
+            height: 17px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .card-body {
+            text-align: center;
+            padding-left: 10px;
+        }
+
+        .card-body .other-info {
+            text-align: left;
+        }
+
+        .name {
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0 auto;
+        }
+
+        .job-title {
+            font-size: 14px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            color: #919191;
+        }
+
+        .bio {
+            font-size: 14px;
+            color: #7B7B7B;
+            font-weight: 300;
+            margin: 10px auto;
+            line-height: 20px;
+        }
+
+        .social-accounts img {
+            width: 15px;
+        }
+
+        .social-accounts a {
+            margin-left: 10px;
+        }
+
+        .social-accounts a:first-child {
+            margin-left: 0;
+        }
+
+        .card-footer {
+            /*position:fixed; /* Full card width/height */
+            position: absolute;
+            /* Fixed card width/height */
+
+            left: 0;
+            width: 100%;
+            bottom: 20px;
+        }
+
+        .stat {
+            box-sizing: border-box;
+            width: calc(100% / 3);
+            float: left;
+            text-align: center;
+            border-left: 1px solid #EBEBEB;
+        }
+
+        .stat .label {
+            display: block;
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: #95989A;
+        }
+
+        .stat .value {
+            display: block;
+            font-weight: 700;
+            font-size: 20px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="card">
+            <div class="card-header"
+                style="background-image: url(https://itconsortiumgh.com/wp-content/uploads/2017/06/romeo-itc.jpg)">
+
+                <div class="card-header-slanted-edge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200">
+                        <path class="polygon" d="M-20,200,1000,0V200Z" /></svg>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <h2 class="name" id="name">ROMEO BUGYEI</h2>
+                <h4 class="job-title" style="color: #0054A0;" id="title">CEO of IT Consortium</h4>
+                <div class="other-info">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex align-items-center">
+                            <div class="me-3"><i data-feather="phone" style="color: #0054A0;"></i></div>
+                            <div>
+                                <small class="text-muted">Mobile</small>
+                                <p class="mb-0" id="mobile">0202019314</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <div class="me-3"><i data-feather="mail" style="color: #0054A0;"></i></div>
+                            <div>
+                                <small class="text-muted">Email</small>
+                                <p class="mb-0" id="email">rbugyei@itconsortiumgh.com</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <div class="me-3"><i data-feather="linkedin" style="color: #0054A0;"></i></div>
+                            <div>
+                                <small class="text-muted">LinkedIn</small>
+                                <p class="mb-0" id="website"><a
+                                        href="https://gh.linkedin.com/in/romeo-bugyei?trk=public_profile_browsemap">https://gh.linkedin.com/in/romeo-bugyei</a></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-grid mt-4">
+                    <button class="btn text-white" id="add-to-contacts-btn" type="button" onclick="makeVCard"
+                        style="background-color: #0054A0;">
+                        <i data-feather="user-plus" class="me-2 align-middle"></i>
+                        <span class="align-middle">Add to contacts</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        feather.replace()
+
+        'use strict';
+
+        function toDataUrl(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+        var reader = new FileReader();
+        reader.onloadend = function() {
+            callback(reader.result);
+        }
+        reader.readAsDataURL(xhr.response);
+    };
+    xhr.open('GET', url);
+    xhr.responseType = 'blob';
+    xhr.send();
+}
+
+toDataUrl('https://picsum.photos/200/300', function(myBase64) {
+    console.log(myBase64); // myBase64 is the base64 string
+});
+
+        function downloadToFile(content, filename, contentType) {
+            const a = document.createElement('a');
+            const file = new Blob([content], {
+                type: contentType
+            });
+
+            a.href = URL.createObjectURL(file);
+            a.download = filename;
+            a.click();
+
+            URL.revokeObjectURL(a.href);
+        }
+
+        const makeVCardVersion = () => `VERSION:3.0`;
+        const makeVCardInfo = (info) => `N:${info}`;
+        const makeVCardName = (name) => `FN:${name}`;
+        const makeVCardOrg = (org) => `ORG:${org}`;
+        const makeVCardTitle = (title) => `TITLE:${title}`;
+        const makeVCardPhoto = (img) => `PHOTO;TYPE=jpg;ENCODING=b:[${img}]`;
+        const makeVCardTel = (phone) => `TEL;TYPE=WORK,VOICE:${phone}`;
+        const makeVCardAdr = (address) => `ADR;TYPE=WORK,PREF:;;${address}`;
+        const makeVCardEmail = (email) => `EMAIL:${email}`;
+        const makeVCardTimeStamp = () => `REV:${new Date().toISOString()}`;
+
+        function makeVCard() {
+            const name = document.getElementById('name').innerHTML;
+            const title = document.getElementById('title').innerHTML;
+            const email = document.getElementById('email').innerHTML;
+            const mobile = document.getElementById('mobile').innerHTML;
+            const website = document.getElementById('website').innerHTML;
+
+            let vcard = `BEGIN:VCARD
+${makeVCardVersion()}
+${makeVCardInfo(name)}
+${makeVCardName(name)}
+${makeVCardOrg('IT Consortium')}
+${makeVCardTitle(title)}
+${makeVCardPhoto('data:image/jpeg;base64,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')}
+${makeVCardTel(mobile)}
+${makeVCardEmail(email)}
+${makeVCardTimeStamp()}
+END:VCARD`;
+            downloadToFile(vcard, 'vcard.vcf', 'text/vcard');
+        }
+
+        document.getElementById('add-to-contacts-btn').addEventListener('click', makeVCard);
+    </script>
+</body>
+
+</html>
